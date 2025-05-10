@@ -688,12 +688,15 @@ public class MainMenuSwing {
                     TWL2.setBackground(Color.decode("#749D1B"));
 
 
-                    TWL2.add(new JLabel("TWL for ExerciseID-" + exerciseId + " is: " + TWLValue + "lbs"));
+                    JLabel TWLOutputLabel = new JLabel("TWL for ExerciseID-" + exerciseId + " is: " + TWLValue + "lbs");
+                    TWL2.add(TWLOutputLabel);
                     moveToCard("TWL 2");
                     JButton returnToHomeButtonFromTWL2 = new JButton("Return To Home Screen");
                     TWL2.add(returnToHomeButtonFromTWL2);
                     returnToHomeButtonFromTWL2.addActionListener(e7 -> {
                         moveToCard("Main Menu");
+                        TWL2.remove(returnToHomeButtonFromTWL2);
+                        TWL2.remove(TWLOutputLabel);
 
                     });
                 }
